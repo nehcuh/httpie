@@ -66,25 +66,16 @@ graph TD
 
 1.  **克隆仓库**:
     ```bash
-    # 如果项目已托管，请替换为您的仓库 URL，例如：
-    # git clone https://github.com/your-username/httpie-rs.git
-    # cd httpie-rs 
-    # 对于此项目结构：
-    cd RustPractise 
+    git clone https://github.com/nehcuh/httpie.git
+    cd httpie
     ```
 2.  **构建项目**:
-    由于 `httpie` 是工作区成员，请从 `RustPractise` 目录执行：
     ```bash
-    cargo build -p httpie --release
+    cargo build --release
     ```
-3.  可执行文件将位于 `RustPractise/target/release/httpie`。您可以将其复制到 `PATH` 环境变量中的一个目录，例如 `/usr/local/bin` 或 `~/.local/bin`。
-    或者直接从 `RustPractise` 目录运行：
+3.  可执行文件将位于 `target/release/httpie`。您可以将其复制到 `PATH` 环境变量中的一个目录，例如 `/usr/local/bin` 或 `~/.local/bin`。
     ```bash
     ./target/release/httpie get httpbin.org/get
-    ```
-    或者通过 cargo 从 `RustPractise` 目录运行：
-    ```bash
-    cargo run -p httpie -- get httpbin.org/get
     ```
 
 ## 使用方法

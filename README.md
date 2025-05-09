@@ -67,24 +67,17 @@ graph TD
 1.  **Clone the repository**:
     ```bash
     # If your project is hosted, replace with your repository URL, e.g.:
-    # git clone https://github.com/your-username/httpie-rs.git
-    # cd httpie-rs 
-    # For the current project structure:
-    cd RustPractise 
+    git clone https://github.com/nehcuh/httpie
+    cd httpie-rs 
     ```
 2.  **Build the project**:
-    Since `httpie` is a workspace member, from the `RustPractise` directory:
     ```bash
-    cargo build -p httpie --release
+    cargo build --release
     ```
-3.  The binary will be available at `RustPractise/target/release/httpie`. You can copy it to a directory in your `PATH`, e.g., `/usr/local/bin` or `~/.local/bin`.
-    Or run it directly from the `RustPractise` directory:
+3.  The binary will be available at `httpie/target/release/httpie`. You can copy it to a directory in your `PATH`, e.g., `/usr/local/bin` or `~/.local/bin`.
     ```bash
     ./target/release/httpie get httpbin.org/get
     ```
-    Or via cargo from the `RustPractise` directory:
-    ```bash
-    cargo run -p httpie -- get httpbin.org/get
     ```
 
 ## Usage
