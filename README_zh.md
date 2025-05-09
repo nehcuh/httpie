@@ -10,28 +10,28 @@ HTTPie-rs 是一个命令行 HTTP 客户端，其灵感来源于广受欢迎的 
 
 ```mermaid
 graph TD
-    A[CLI 输入] --> B(main.rs);
-    B --> C{cli.rs - Clap 参数解析};
-    C --> D[processor.rs - 命令逻辑处理];
-    D --> E{HTTP 请求构建 (reqwest)};
-    E --> F[HTTP 客户端 (reqwest)];
-    F --> G[远程服务器];
+    A["CLI Input"] --> B("main.rs");
+    B --> C{"cli.rs - Clap Parsing"};
+    C --> D["processor.rs - Command Logic"];
+    D --> E{"HTTP Request Construction (reqwest)"};
+    E --> F["HTTP Client (reqwest)"];
+    F --> G["Remote Server"];
     G --> F;
-    F --> H{响应处理};
-    H --> I[输出到控制台];
+    F --> H{"Response Handling"};
+    H --> I["Output to Console"];
 
-    D --> T(types.rs - 共享枚举/结构体);
-    D --> U(utils.rs - 辅助函数);
-    D --> V(error.rs - 自定义错误类型);
+    D --> T("types.rs - Shared Enums/Structs");
+    D --> U("utils.rs - Helper Functions");
+    D --> V("error.rs - Custom Error Types");
 
-    subgraph 核心逻辑
+    subgraph "Core Logic"
         D
         E
         F
         H
     end
 
-    subgraph 定义与工具
+    subgraph "Definitions & Utilities"
         C
         T
         U

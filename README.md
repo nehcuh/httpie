@@ -10,28 +10,28 @@ The project is organized into several modules to separate concerns and enhance m
 
 ```mermaid
 graph TD
-    A[CLI Input] --> B(main.rs);
-    B --> C{cli.rs - Clap Parsing};
-    C --> D[processor.rs - Command Logic];
-    D --> E{HTTP Request Construction (reqwest)};
-    E --> F[HTTP Client (reqwest)];
-    F --> G[Remote Server];
+    A["CLI Input"] --> B("main.rs");
+    B --> C{"cli.rs - Clap Parsing"};
+    C --> D["processor.rs - Command Logic"];
+    D --> E{"HTTP Request Construction (reqwest)"};
+    E --> F["HTTP Client (reqwest)"];
+    F --> G["Remote Server"];
     G --> F;
-    F --> H{Response Handling};
-    H --> I[Output to Console];
+    F --> H{"Response Handling"};
+    H --> I["Output to Console"];
 
-    D --> T(types.rs - Shared Enums/Structs);
-    D --> U(utils.rs - Helper Functions);
-    D --> V(error.rs - Custom Error Types);
+    D --> T("types.rs - Shared Enums/Structs");
+    D --> U("utils.rs - Helper Functions");
+    D --> V("error.rs - Custom Error Types");
 
-    subgraph Core Logic
+    subgraph "Core Logic"
         D
         E
         F
         H
     end
 
-    subgraph Definitions & Utilities
+    subgraph "Definitions & Utilities"
         C
         T
         U
